@@ -1,11 +1,10 @@
 library(shiny)
-library(shinyBS)
 shinyUI(fluidPage(
-  tags$head(
-    includeScript(path="www/jQuery.mmenu-master/dist/js/jquery.mmenu.all.min.js"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "jQuery.mmenu-master/dist/css/jquery.mmenu.all.css"),
-    tags$link(rel="shortcut icon", href="www/favicon.ico")
-  ),
+  suppressDependencies("jquery"),
+  tags$script(src="jquery-2.2.1.js"),
+  tags$script(src="jQuery.mmenu-master/dist/js/jquery.mmenu.all.min.js"),
+  tags$link(rel = "stylesheet", type = "text/css", href = "jQuery.mmenu-master/dist/css/jquery.mmenu.all.css"),
+  tags$link(rel="shortcut icon", href="favicon.ico"),
   tags$script(type="text/javascript",
               "$(document).ready(function() {
                   $(\"#my-menu\").mmenu({
