@@ -1,5 +1,5 @@
 /*
- * jQuery mmenu v5.6.1
+ * jQuery mmenu v5.6.3
  * @requires jQuery 1.7.0 or later
  *
  * mmenu.frebsite.nl
@@ -14,7 +14,7 @@
 (function( $ ) {
 
 	var _PLUGIN_	= 'mmenu',
-		_VERSION_	= '5.6.1';
+		_VERSION_	= '5.6.3';
 
 
 	//	Plugin already excists
@@ -464,7 +464,9 @@
 									$a = $p.closest( '.' + _c.panel ).find( 'a[href="#' + $t.attr( 'id' ) + '"]' ).first();
 									$p = $a.closest( '.' + _c.panel );
 								}
-
+								
+								// fix: _url undefined
+								var _url = false;
 								var $navbar = $( '<div class="' + _c.navbar + '" />' );
 
 								if ( $p.length )
